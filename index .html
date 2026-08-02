@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stephen Mimi | Cloud, SAP & Data Analytics Portfolio</title>
+<meta name="description" content="Stephen Mimi — Digital Solutions & Business Intelligence. Portfolio showcasing Cloud, SAP, AI/RAG, and Data Analytics projects.">
+<meta property="og:title" content="Stephen Mimi | Cloud, SAP & Data Analytics Portfolio">
+<meta property="og:description" content="M.Sc. Digital Business Innovation candidate specializing in SAP & Cloud integration, product management, and applied data analytics.">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mimi-dotcom.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stephen Mimi | Cloud, SAP & Data Analytics Portfolio">
+<meta name="twitter:description" content="Portfolio showcasing Cloud, SAP, AI/RAG, and Data Analytics projects.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B1220; --bg2:#0F1830; --card:#121b33; --line:#22304f;
+  --text:#EAF0FF; --muted:#93A2C2; --accent:#7C5CFF; --accent2:#A78BFA;
+  --good:#2FD180;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif; background:radial-gradient(1200px 600px at 80% -10%, #241a4a 0%, var(--bg) 55%);
+  color:var(--text); line-height:1.6;
+}
+.container{max-width:1120px; margin:0 auto; padding:0 24px;}
+nav{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  backdrop-filter:blur(14px); background:rgba(11,18,32,0.75);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex; justify-content:space-between; align-items:center; padding:16px 24px; max-width:1120px; margin:0 auto;}
+.logo{font-weight:800; font-size:18px; letter-spacing:-0.5px;}
+.logo span{color:var(--accent);}
+.nav-links{display:flex; gap:28px; list-style:none;}
+.nav-links a{color:var(--muted); text-decoration:none; font-size:14px; font-weight:600; transition:.2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-actions{display:flex; gap:12px; align-items:center;}
+.cta-btn{
+  background:linear-gradient(135deg,var(--accent),var(--accent2)); color:white; padding:10px 18px;
+  border-radius:10px; font-weight:700; font-size:13px; text-decoration:none; box-shadow:0 6px 20px rgba(124,92,255,0.35);
+}
+.cv-btn{
+  border:1px solid var(--line); color:var(--text); padding:10px 16px; border-radius:10px;
+  font-weight:700; font-size:13px; text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+}
+.cv-btn:hover{border-color:var(--accent); color:var(--accent2);}
+
+/* HERO */
+.hero{padding:150px 0 90px; text-align:left;}
+.eyebrow{color:var(--accent2); font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:16px;}
+.hero h1{font-size:52px; font-weight:800; letter-spacing:-1.5px; line-height:1.1; max-width:760px;}
+.hero h1 .grad{background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+.hero p{color:var(--muted); font-size:18px; max-width:620px; margin-top:20px;}
+.hero-actions{display:flex; gap:16px; margin-top:32px; flex-wrap:wrap;}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2)); color:white; padding:14px 26px; border-radius:12px; font-weight:700; text-decoration:none; box-shadow:0 8px 24px rgba(124,92,255,0.35);}
+.btn-secondary{border:1px solid var(--line); color:var(--text); padding:14px 26px; border-radius:12px; font-weight:700; text-decoration:none;}
+.hero-tags{display:flex; gap:10px; margin-top:36px; flex-wrap:wrap;}
+.tag{background:var(--card); border:1px solid var(--line); color:var(--muted); font-size:12px; font-weight:600; padding:6px 12px; border-radius:20px;}
+
+/* SECTION HEADERS */
+.section{padding:80px 0;}
+.section-title{font-size:32px; font-weight:800; letter-spacing:-0.5px; margin-bottom:8px;}
+.section-sub{color:var(--muted); font-size:15px; margin-bottom:44px; max-width:600px;}
+
+/* SKILLS */
+.skills-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+.skill-card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px;}
+.skill-card h4{font-size:15px; margin-bottom:12px; color:var(--text);}
+.skill-card .icon{font-size:22px; margin-bottom:10px; display:block;}
+.skill-card p{color:var(--muted); font-size:13px; line-height:1.5;}
+
+/* PROJECTS */
+.project-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+.project-card{
+  background:var(--card); border:1px solid var(--line); border-radius:18px; padding:28px;
+  transition:.25s; position:relative; overflow:hidden;
+}
+.project-card:hover{border-color:var(--accent); transform:translateY(-4px);}
+.project-card .badge{
+  display:inline-block; font-size:11px; font-weight:700; padding:4px 10px; border-radius:20px;
+  background:rgba(124,92,255,0.15); color:#C7B8FF; margin-bottom:14px;
+}
+.project-card .badge.sap{background:rgba(167,139,250,0.15); color:#DCCBFF;}
+.project-card .badge.ai{background:rgba(47,209,128,0.15); color:#8FF0C1;}
+.project-card h3{font-size:19px; margin-bottom:10px; letter-spacing:-0.3px;}
+.project-card p{color:var(--muted); font-size:14px; margin-bottom:18px;}
+.project-links{display:flex; gap:14px; flex-wrap:wrap;}
+.project-links a{color:var(--accent2); font-size:13px; font-weight:700; text-decoration:none;}
+.project-links a:hover{text-decoration:underline;}
+.tech-row{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px;}
+.tech-pill{font-size:11px; color:var(--muted); border:1px solid var(--line); padding:3px 9px; border-radius:8px;}
+.featured{grid-column:span 2;}
+
+/* EXPERIENCE */
+.timeline{border-left:2px solid var(--line); padding-left:32px; position:relative;}
+.timeline-item{margin-bottom:40px; position:relative;}
+.timeline-item::before{
+  content:''; position:absolute; left:-41px; top:4px; width:12px; height:12px; border-radius:50%;
+  background:var(--accent); box-shadow:0 0 0 4px rgba(124,92,255,0.2);
+}
+.timeline-item .role{font-size:17px; font-weight:700;}
+.timeline-item .org{color:var(--accent2); font-size:14px; font-weight:600; margin-top:2px;}
+.timeline-item .date{color:var(--muted); font-size:13px; margin-top:2px; margin-bottom:12px;}
+.timeline-item ul{color:var(--muted); font-size:14px; padding-left:18px;}
+.timeline-item li{margin-bottom:6px;}
+
+/* EDUCATION / CERTS */
+.two-col{display:grid; grid-template-columns:1.3fr 1fr; gap:32px;}
+.mini-card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px; margin-bottom:16px;}
+.mini-card h4{font-size:15px; margin-bottom:4px;}
+.mini-card .sub{color:var(--accent2); font-size:13px; font-weight:600;}
+.cert-list{list-style:none; color:var(--muted); font-size:14px;}
+.cert-list li{padding:10px 0; border-bottom:1px solid var(--line); display:flex; justify-content:space-between;}
+.cert-list li:last-child{border-bottom:none;}
+
+/* CONTACT */
+.contact-box{
+  background:linear-gradient(135deg, rgba(124,92,255,0.14), rgba(167,139,250,0.10));
+  border:1px solid var(--line); border-radius:24px; padding:56px; text-align:center;
+}
+.contact-box h2{font-size:30px; margin-bottom:12px;}
+.contact-box p{color:var(--muted); margin-bottom:28px;}
+.contact-links{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+
+footer{text-align:center; padding:40px 0; color:var(--muted); font-size:13px; border-top:1px solid var(--line);}
+
+@media(max-width:860px){
+  .skills-grid{grid-template-columns:repeat(2,1fr);}
+  .project-grid{grid-template-columns:1fr;}
+  .featured{grid-column:span 1;}
+  .two-col{grid-template-columns:1fr;}
+  .hero h1{font-size:36px;}
+  .nav-links{display:none;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Stephen<span>.Mimi</span></div>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="cv-btn" href="assets/StephenMimiCV.pdf" download>⬇ Download CV</a>
+      <a class="cta-btn" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow">Münster, Germany · Open to Cloud / SAP / Product / Data roles</div>
+    <h1>Building <span class="grad">Cloud-Connected, AI-Powered</span> Data Products That Ship.</h1>
+    <p>M.Sc. Digital Business Innovation candidate specializing in <strong>SAP & Cloud integration, product management, and applied data analytics</strong>. I turn messy operational data into dashboards, AI assistants, and enterprise tools that stakeholders actually use.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#projects">View Projects →</a>
+      <a class="btn-secondary" href="assets/StephenMimiCV.pdf" download>⬇ Download CV</a>
+      <a class="btn-secondary" href="https://github.com/mimi-dotcom" target="_blank">GitHub Profile</a>
+    </div>
+    <div class="hero-tags">
+      <span class="tag">SAP Analytics Cloud</span>
+      <span class="tag">SAP Fiori / UI5</span>
+      <span class="tag">Power BI</span>
+      <span class="tag">Python & RAG/LLM</span>
+      <span class="tag">Agile / Scrum</span>
+      <span class="tag">Stakeholder Management</span>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-title">Featured Projects</div>
+    <div class="section-sub">Applied, end-to-end builds spanning SAP enterprise tooling, AI/RAG systems, and data science — not tutorials.</div>
+
+    <div class="project-grid">
+
+      <div class="project-card featured">
+        <span class="badge ai">AI / RAG · Live Production App</span>
+        <h3>Bezirksregierung Educator Portal — AI RAG Dashboard</h3>
+        <p>An AI-augmented analytics platform built for a real district government education department. Lets non-technical staff upload workshop data and query it in natural language via "Astra," a local LLM-powered RAG assistant — designed with GDPR-conscious, on-premise AI architecture for sensitive public-sector data.</p>
+        <div class="tech-row">
+          <span class="tech-pill">Streamlit</span><span class="tech-pill">Pandas</span><span class="tech-pill">Plotly</span><span class="tech-pill">OpenAI-compatible LLM</span><span class="tech-pill">RAG</span>
+        </div>
+        <div class="project-links">
+          <a href="https://bezirksregierungworkshops.streamlit.app/" target="_blank">🔗 Live App</a>
+          <a href="https://github.com/mimi-dotcom/Cloud-_AI_-R.A.G_-Portal" target="_blank">💻 Source Code</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="badge sap">SAP UI5 · Live Demo</span>
+        <h3>SAP UI5 Ticketing Dashboard</h3>
+        <p>An enterprise-style support ticketing dashboard built with SAPUI5, reflecting real SAP CRM ticket-system workflows encountered in a working-student support role.</p>
+        <div class="tech-row"><span class="tech-pill">SAPUI5</span><span class="tech-pill">HTML</span><span class="tech-pill">JavaScript</span></div>
+        <div class="project-links">
+          <a href="https://mimi-dotcom.github.io/SAP-UI5-Ticketing-Dashboard/" target="_blank">🔗 Live App</a>
+          <a href="https://github.com/mimi-dotcom/SAP-UI5-Ticketing-Dashboard" target="_blank">💻 Source Code</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="badge sap">SAP UI5 · Live Demo</span>
+        <h3>SAPUI5 Employee Management Dashboard</h3>
+        <p>Employee management system with KPI analytics, full CRUD operations, search, filtering, and responsive layouts — built to SAP Fiori design guidelines.</p>
+        <div class="tech-row"><span class="tech-pill">SAPUI5</span><span class="tech-pill">Fiori Design</span><span class="tech-pill">HTML</span></div>
+        <div class="project-links">
+          <a href="https://mimi-dotcom.github.io/sapui5-employee-management-dashboard/" target="_blank">🔗 Live App</a>
+          <a href="https://github.com/mimi-dotcom/sapui5-employee-management-dashboard" target="_blank">💻 Source Code</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="badge">Data Science · Live Demo</span>
+        <h3>Loan Approval Prediction</h3>
+        <p>A machine learning application predicting loan eligibility from applicant financial data — covering the full pipeline from EDA to model deployment.</p>
+        <div class="tech-row"><span class="tech-pill">Python</span><span class="tech-pill">scikit-learn</span><span class="tech-pill">Jupyter</span></div>
+        <div class="project-links">
+          <a href="https://share.streamlit.io/mimi-dotcom/loan-approval-prediction/main/dashboard.py" target="_blank">🔗 Live App</a>
+          <a href="https://github.com/mimi-dotcom/Loan-Approval-Prediction" target="_blank">💻 Source Code</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="badge">Data Science</span>
+        <h3>Fuel Guzzler Predictor App</h3>
+        <p>A deployed Streamlit app predicting vehicle fuel consumption from weight, acceleration, and engine displacement, using a trained regression model.</p>
+        <div class="tech-row"><span class="tech-pill">Streamlit</span><span class="tech-pill">Python</span><span class="tech-pill">Regression</span></div>
+        <div class="project-links">
+          <a href="https://github.com/mimi-dotcom/Fuel-Guzzler-Predictor-App" target="_blank">💻 Source Code</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-title">Core Competencies</div>
+    <div class="section-sub">A blend of enterprise systems fluency, product thinking, and hands-on data engineering.</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <span class="icon">☁️</span>
+        <h4>SAP & Cloud Platforms</h4>
+        <p>SAP Fiori, SAP Analytics Cloud, SAP CRM Ticket Systems, MDG Install Base, Cloud/Systems Integration via Power Automate.</p>
+      </div>
+      <div class="skill-card">
+        <span class="icon">📊</span>
+        <h4>Data Science & Analytics</h4>
+        <p>Python, KPI Dashboard Design, Power BI, Tableau, SAP Analytics Cloud, applied ML pipelines.</p>
+      </div>
+      <div class="skill-card">
+        <span class="icon">🧭</span>
+        <h4>Product Management</h4>
+        <p>Agile/Scrum, persona definition, product roadmaps, sprint planning, Design Thinking, usability testing, Jira, Miro.</p>
+      </div>
+      <div class="skill-card">
+        <span class="icon">🤝</span>
+        <h4>Strategic Management</h4>
+        <p>Stakeholder management, change management, cross-functional team leadership, public-sector engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-title">Professional Experience</div>
+    <div class="section-sub">Real-world impact across enterprise support systems, product management, and public-sector innovation.</div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="role">Working Student — Service Data & Support</div>
+        <div class="org">GEA Farm Technologies · Bönen, Germany</div>
+        <div class="date">Nov 2025 – Present</div>
+        <ul>
+          <li>Connected SAP CRM tools and communication channels via Power Automate, eliminating manual data transfer and saving ~8 hours/week of admin work.</li>
+          <li>Built and maintained Power BI KPI dashboards (First Response Time, CSAT, ticket resolution rate) for 50+ regional service leads.</li>
+          <li>Migrated customer and dealer data into a new cloud CRM portal and install base system.</li>
+          <li>Developed cross-border data governance guidelines ensuring full GDPR compliance.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="role">Product Manager (Volunteer)</div>
+        <div class="org">AI for Impact – Berlin Recycling GmbH · Remote</div>
+        <div class="date">Jan 2024 – May 2024</div>
+        <ul>
+          <li>Built an AI predictive model forecasting employee absenteeism from historical HR and environmental data across a 529-employee organization.</li>
+          <li>Identified risk periods to optimize workforce planning and reduce operational risk.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="role">Product Management Intern</div>
+        <div class="org">UnternehmerTUM – Center for Innovation & Business Creation · Munich, Germany</div>
+        <div class="date">Aug 2023 – Dec 2023</div>
+        <ul>
+          <li>Co-developed an AI-powered platform connecting corporate donors with 500+ verified nonprofits via an intelligent recommender system.</li>
+          <li>Built product roadmap and go-to-market strategy using AWS's Backward PR-FAQ methodology.</li>
+          <li>Led daily sprints across a cross-functional team of UI/UX designers, developers, and ML engineers.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="education">
+  <div class="container">
+    <div class="section-title">Education & Research</div>
+    <div class="two-col">
+      <div>
+        <div class="mini-card">
+          <h4>M.Sc. Digital Business Innovation Management</h4>
+          <div class="sub">FH Münster University of Applied Sciences · Oct 2024 – Aug 2026</div>
+          <p style="color:var(--muted); font-size:13px; margin-top:8px;">Focus: AI, Advanced Data Analysis (Tableau), Data Science (Python), Digital Transformation Strategy, Design Thinking.</p>
+        </div>
+        <div class="mini-card">
+          <h4>Master's Thesis</h4>
+          <div class="sub">"Systemic Factors of Digital Transformation in Münster Secondary Schools"</div>
+          <p style="color:var(--muted); font-size:13px; margin-top:8px;">14 stakeholder interviews with public-sector education leaders; requirements engineering (GDPR, IT infrastructure, change-readiness); qualitative analysis via Python text-mining and MAXQDA; presented findings directly to Bezirksregierung Münster to guide digital transformation strategy.</p>
+        </div>
+        <div class="mini-card">
+          <h4>Bachelor's, Business Administration (BWL)</h4>
+          <div class="sub">Makerere University · Kampala, Uganda</div>
+        </div>
+        <div class="mini-card">
+          <h4>📄 Published Research</h4>
+          <p style="color:var(--muted); font-size:13px;">Mimi, S. (2026). "Beyond Infrastructure: Knowledge Fragmentation, Governance Complexity, and the Institutionalisation of AR/VR in German Secondary Schools." <em>Research Square.</em></p>
+        </div>
+      </div>
+      <div>
+        <div class="mini-card">
+          <h4 style="margin-bottom:14px;">Certifications</h4>
+          <ul class="cert-list">
+            <li>🏆 Winner, AI Transdev Hackathon <span>2025</span></li>
+            <li>Professional Scrum Master I (PSM I) <span>2023</span></li>
+            <li>Product Management & Design Thinking – UnternehmerTUM <span>2023</span></li>
+            <li>Advanced Data Analysis – TechLabs Digital Academy <span>2023</span></li>
+          </ul>
+        </div>
+        <div class="mini-card">
+          <h4 style="margin-bottom:14px;">Languages</h4>
+          <ul class="cert-list">
+            <li>English <span>Native</span></li>
+            <li>German <span>Fluent, B2 Professional</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <h2>Let's build something together.</h2>
+      <p>Open to opportunities in Cloud, SAP, Product Management, and Data Analysis — Münster, Germany & remote.</p>
+      <div class="contact-links">
+        <a class="btn-primary" href="mailto:nirichu@gmail.com">✉️ Email Me</a>
+        <a class="btn-secondary" href="assets/StephenMimiCV.pdf" download>⬇ Download CV</a>
+        <a class="btn-secondary" href="https://linkedin.com/in/stephenmimi" target="_blank">LinkedIn</a>
+        <a class="btn-secondary" href="https://github.com/mimi-dotcom" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Stephen Mimi · Münster, Germany · Built with HTML, CSS & ambition.
+</footer>
+
+</body>
+</html>
